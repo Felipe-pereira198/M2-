@@ -10,14 +10,14 @@ import java.util.Date;
  */
 public class jogo {
     private int pkjogo;
-    private String nome;
+    private String nome_jogo;
     private String descricao;
     private Date dt_lancamento;
     private String genero;
 
     public jogo(int pkjogo, String nome, String descricao, Date dt_lancamento, String genero) {
         this.pkjogo = pkjogo;
-        this.nome = nome;
+        this.nome_jogo = nome;
         this.descricao = descricao;
         this.dt_lancamento = dt_lancamento;
         this.genero = genero;
@@ -30,8 +30,8 @@ public class jogo {
         return pkjogo;
     }
 
-    public String getNome() {
-        return nome;
+    public String getNome_jogo() {
+        return nome_jogo;
     }
 
     public String getDescricao() {
@@ -50,8 +50,8 @@ public class jogo {
         this.pkjogo = pkjogo;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setNome_jogo(String nome) {
+        this.nome_jogo = nome;
     }
 
     public void setDescricao(String descricao) {
