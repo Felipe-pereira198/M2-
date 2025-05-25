@@ -5,11 +5,20 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
 -->
 <html>
     <head>
-        <title>TODO supply a title</title>
+        <title>Mygamelist</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
-    <body>
-        <div>TODO write content</div>
-    </body>
+    <frameset cols="310, *" noresize="noresize" frameborder="0.">
+        <frame src="menu.html" name="menu_page"/>
+        <frame src="main.html" name="main_page"/>         
+        <noframes>
+            <div class="menu">
+                <a class="active" href="menu.html">Menu</a>
+                <a href="cadastro/index.html" target="main_page">Cadastro</a>
+                <a href="#contact" target="main_page">Contato</a>
+                <a href="#about" target="main_page">Sobre</a>
+            </div>
+        </noframes>
+    </frameset>
 </html>

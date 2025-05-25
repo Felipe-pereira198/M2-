@@ -79,39 +79,6 @@ public class lista_jogo_dao {
             return null;
         }               
     }
-    
-    public listajogo consultar_id(listajogo p_jogo) throws ClassNotFoundException, ParseException{
-        //Conectar
-        Connection conexao = null;
-        try{
-            conexao = conectadb.conectar(); //Abre a conexão
-            Statement stmt = conexao.createStatement(); //Cria uma instrução
-            //String sql = "SELECT * FROM cliente WHERE pk_id = 7";
-            String sql = "SELECT * FROM listajogo WHERE id_jogo = " + p_jogo.getId_jogo()+"ORDER BY nome";
-            ResultSet rs = stmt.executeQuery(sql); // Select
-            
-            int n_reg = 0;
-            while (rs.next()){
-               p_jogo.setPk_lista(Integer.parseInt( rs.getString("pk_lista") ));
-               //nomejogo.setNome_jogo(rs.getString("nome"));
-               //p_jogo.setId_jogo(Integer.parseInt( rs.getString("id_jogo") ));
-               //p_jogo.setNome(rs.getString("nome") );
-               //p_jogo.setRenda(Double.valueOf(rs.getString("renda") ));
-               //p_jogo.setNasc( rs.getDate("nasc"));
-               n_reg++;
-            }
-                
-            if (n_reg == 0){
-                return null;
-            }else{
-                return p_jogo;
-            }            
-        }
-        catch(SQLException ex){
-            System.out.println("Erro SQL: " + ex);    
-            return null;
-        }               
-    }
-    
+         
 }
 
