@@ -87,7 +87,7 @@ public class lista_jogo_dao {
             conexao = conectadb.conectar(); //Abre a conexão
             Statement stmt = conexao.createStatement(); //Cria uma instrução
             //String sql = "SELECT * FROM cliente WHERE pk_id = 7";
-            String sql = "SELECT * FROM listajogo WHERE id_jogo = " + p_jogo.getId_jogo()+"ORDER BY nome";
+            String sql = "SELECT * FROM listajogo WHERE id_jogo = " + p_jogo.getPk_lista()+"ORDER BY nome";
             ResultSet rs = stmt.executeQuery(sql); // Select
             
             int n_reg = 0;
@@ -112,6 +112,23 @@ public class lista_jogo_dao {
             return null;
         }               
     }
-    
+    public boolean alterar (listajogo p_list) throws ClassNotFoundException, ParseException{
+       //Conectar
+        Connection conexao = null;
+        try{
+            conexao = conectadb.conectar(); //Abre a conexão
+            Statement stmt = conexao.createStatement();
+          //String sql = "UPDATE cliente SET nome='Amanda de Souza', renda= 7500, nasc='2020/04/20' WHERE codigo = 700";
+            String sql = "UPDATE listajogo SET status='" + p_list.getStatus() + "', progresso= " +p_list.getProgresso()+", nota='"+ p_list.getNota()+ ", dtinicio='" + new SimpleDateFormat("yyyy/MM/dd").format(p_list.getDtinicio())+ "', dtfim='" + new SimpleDateFormat("yyyy/MM/dd").format(p_list.getDtfim())+
+                                                                          "' WHERE codigo = " + p_list.getPk_lista();                                                                                                                       
+            stmt.executeUpdate(sql); // Insert - Update - Delete
+            return true;
+        }
+        catch(SQLException ex){
+            System.out.println("Erro SQL: " + ex);
+            return false;  
+    }
+    }
 }
+    
 
