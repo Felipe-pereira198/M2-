@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
+  <title>MyGameList - Cadastro</title>
+  <style>
+    .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+    }
+
+    @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+            font-size: 3.5rem;
+        }
+    }
+
+    .b-example-divider {
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+    }
+
+    .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+    }
+
+    .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+    }
+
+    .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+    }
+
+    .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    /* --- Correções para centralizar o formulário --- */
+    body {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        padding: 20px;
+    }
+
+    .form-signin {
+        width: 100%;
+        max-width: 400px; /* Largura máxima do formulário */
+        padding: 20px;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra opcional */
+    }
+
+    .form-signin img {
+
+    }
+
+    .form-floating {
+        margin-bottom: 15px;
+    }
+
+    .btn-primary {
+        margin-top: 10px;
+    }
+    .form-signin {
+        text-align: center; /* Centraliza tudo dentro do form */
+    }
+
+    .form-signin img {
+        display: block;
+        margin: 0 auto; /* Centraliza a imagem */
+    }
+  </style>
+</head>
+<body>
+  <main class="form-signin">
+    <form method="post" action="">
+      <h1 class="h3 mb-3 fw-normal">Cadastro</h1>
+
+      <div class="form-floating">
+        <input type="text" class="form-control" id="floatingNome" placeholder="Nome completo" required>
+        <label for="floatingNome" class="required">Nome completo</label>
+      </div>
+
+      <div class="form-floating">
+        <input type="email" class="form-control" id="floatingEmail" placeholder="name@example.com" required>
+        <label for="floatingEmail" class="required">E-mail</label>
+      </div>
+
+      <div class="form-floating">
+        <input type="password" class="form-control" id="floatingPassword" placeholder="Senha" required>
+        <label for="floatingPassword" class="required">Senha</label>
+      </div>
+
+      <div class="form-floating">
+        <input type="date" class="form-control" id="floatingNascimento" required>
+        <label for="floatingNascimento" class="required">Data de nascimento</label>
+      </div>
+
+      <button class="w-100 btn btn-lg btn-primary" type="submit">Cadastrar</button>
+      <p class="mt-3 mb-3 text-muted">Já tem uma conta? <a href="index.html">Faça login</a></p>
+    </form>
+  </main>
+</body>
+</html>
