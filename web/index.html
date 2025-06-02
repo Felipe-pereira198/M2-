@@ -57,7 +57,6 @@
                 -webkit-overflow-scrolling: touch;
             }
 
-            /* --- Correções para centralizar o formulário --- */
             body {
                 background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
                 display: flex;
@@ -95,6 +94,18 @@
                 display: block;
                 margin: 0 auto; /* Centraliza a imagem */
             }
+            #button-Login{
+                width: 100%;
+                padding: 14px;
+                font-size: 16px;
+                font-weight: 600;
+                color: white;
+                background: linear-gradient(to right, #667eea, #764ba2);
+                border: none;
+                border-radius: 6px;
+                cursor: pointer;
+                transition: opacity 0.3s;
+            }
         </style>
     </head>
     
@@ -112,9 +123,11 @@
                     <input name="senha" type="password" class="form-control" id="floatingPassword" placeholder="Password">
                     <label for="floatingPassword">Password</label>
                 </div>
-                <button class="w-100 btn btn-lg btn-primary" type="submit">Login</button>
+                <button class="w-100 btn btn-lg btn-primary" id="button-Login" type="submit">Login</button>
                 <p class="mt-2 mb-3 text-muted">&copy; 2025</p>
             </form>
+            
+            <p class="form-footer">Ainda não tem uma conta? <a href="cadastro.html">Cadastre-se</a></p>
         </main>
     </body>
 </html>

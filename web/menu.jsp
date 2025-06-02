@@ -167,12 +167,6 @@
           Plataformas
         </a>
       </li>
-      <li>
-        <a href="cadastro/cadastro.html" target="main_page" class="nav-link link-body-emphasis">
-          <i class="fas fa-tv fa-icon"></i>
-          Cadastro
-        </a>
-      </li>
     </ul>
     <hr>
   </div>
