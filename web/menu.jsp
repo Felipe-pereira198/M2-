@@ -150,7 +150,7 @@
         </a>
       </li>
       <li>
-        <a href="jogo/jogo.html" target="main_page" class="nav-link link-body-emphasis">
+        <a href="jogo/jogoform.jsp" target="main_page" class="nav-link link-body-emphasis">
           <i class="fas fa-gamepad fa-icon"></i>
           Jogos
         </a>

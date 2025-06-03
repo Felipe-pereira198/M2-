@@ -14,7 +14,10 @@ public class jogo {
     private String descricao;
     private Date dt_lancamento;
     private String genero;
-
+    private int id_desenvolvedora;
+    
+    
+    
     public jogo(int pkjogo, String nome, String descricao, Date dt_lancamento, String genero) {
         this.pkjogo = pkjogo;
         this.nome_jogo = nome;
@@ -46,6 +49,10 @@ public class jogo {
         return genero;
     }
 
+    public int getId_desenvolvedora() {
+    return id_desenvolvedora;
+}
+
     public void setPkjogo(int pkjogo) {
         this.pkjogo = pkjogo;
     }
@@ -65,5 +72,13 @@ public class jogo {
     public void setGenero(String genero) {
         this.genero = genero;
     }
+    
+    public void setId_desenvolvedora(int id_desenvolvedora) {
+    this.id_desenvolvedora = id_desenvolvedora;
+}
 
 }
+
+
+
+

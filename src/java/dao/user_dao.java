@@ -25,7 +25,7 @@ public class user_dao {
             conexao = conectadb.conectar(); //Abre a conexão
             Statement stmt = conexao.createStatement();
             //String sql = "Insert into cliente (codigo, nome, renda, nasc) values(987654, 'José da Silva', 9500, '1981/03/22')";
-            String sql = "Insert into usuario ( nome_usuario, senha, email,  dt_nasc) values('" +  
+            String sql = "Insert into usuario ( nome_usuario, senha, email, dt_nasc) values('" +  
                                                                                      p_user.getNome() + "', '" + 
                                                                                      p_user.getSenha()+ "', '"+
                                                                                     p_user.getEmail() + "', '"+ new SimpleDateFormat("yyyy/MM/dd").format(p_user.getDt_nasc())+"')";

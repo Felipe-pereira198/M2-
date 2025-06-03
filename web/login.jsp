@@ -24,7 +24,7 @@
             //ControleUsuario ctrlUsu = new ControleUsuario();
             
             //if (ctrlUsu.logar(login, senha)){
-            if (login.equals("pedrinho@gmail.com") && (senha.equals("senha123"))){
+            if (login.equals("eu@gmail.com") && (senha.equals("senha"))){
                 session.setAttribute("autoriza", "1");           
         %>
                 <script> window.location.href='index_menu.jsp'; </script>

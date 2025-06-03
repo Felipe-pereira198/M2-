@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
+    <%@ page import="dao.desenvolvedora_dao" %>
+<%@ page import="model.desenvolvedora" %>
+<%@ page import="java.util.List" %>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MyGameList - Jogos</title>
@@ -83,7 +85,7 @@
             opacity: 0.9;
         }
 
-        /* --- Texto de RodapÃ© --- */
+        /* --- Texto de Rodapé --- */
         .form-footer {
             text-align: center;
             margin-top: 20px;
@@ -100,24 +102,48 @@
     </style>
 </head>
 <body>
+
+
+    <%
+    desenvolvedora_dao devdao = new desenvolvedora_dao();
+    List<desenvolvedora> lista = devdao.lista_simples();
+%>
     <div class="form-container">
         <h1 class="form-title">Cadastro de jogos</h1>
 
-        <form method="post" action="">
+        <form method="post" action="jogo.jsp">
             <div class="input-group">
                 <label for="nome_jogo" class="input-label">Nome do Jogo</label>
-                <input type="text" id="nome" class="form-input" placeholder="Digite seu nome" required>
+                <input name="nome" type="text" id="nome" class="form-input" placeholder="Digite seu nome" required>
             </div>
 
             <div class="input-group">
-                <label for="email" class="input-label">DescriÃ§Ã£o</label>
-                <input type="text" id="text" class="form-input" required>
+                <label for="email" class="input-label">Descrição</label>
+                <input type="text" name="descricao" id="text" class="form-input" required>
             </div>
 
             <div class="input-group">
-                <label for="nascimento" class="input-label">Data de lanÃ§amento</label>
-                <input type="date" id="lancamento" class="form-input" required>
+                <label for="nascimento" class="input-label">Data de lançamento</label>
+                <input type="date" name="lancamento" id="lancamento" class="form-input" required>
             </div>
+            <div class="input-group">
+                <label for="Genero" class="input-label">Genêro</label>
+                <input type="text" name="genero" id="lancamento" class="form-input" required>
+            </div>
+             <div class="input-group">
+                  <label for="dev" class="input-label">Desenvolvedora</label>
+    <select name="dev" class="form-input" required>
+        <option value="">Selecione</option>
+        <%
+            for (desenvolvedora dev : lista) {
+        %>
+            <option value="<%= dev.getPkdev() %>"><%= dev.getNomedev() %></option>
+        <%
+            }
+        %>
+    </select>
+            </div>
+
 
             <button type="submit" class="form-button">Cadastrar</button>
         </form>
