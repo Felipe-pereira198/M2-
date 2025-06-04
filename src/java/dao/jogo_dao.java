@@ -47,19 +47,20 @@ public class jogo_dao {
         try{
             conexao = conectadb.conectar(); //Abre a conexão
             Statement stmt = conexao.createStatement(); //Cria uma instrução
-            //String sql = "SELECT * FROM cliente";
-            String sql = "SELECT * FROM jogo";
+            //String sql = "SELECT jogo.pk_jogo, jogo.nome, jogo.descricao, jogo.data_lancamento, jogo.genero, desenvolvedora.nome AS nome_desenvolvedora FROM jogo JOIN desenvolvedora ON jogo.id_desenvolvedora = desenvolvedora.pk_dev;";
+            String sql = "SELECT jogo.pk_jogo, jogo.nome, jogo.descricao, jogo.data_lancamento, jogo.genero, desenvolvedora.nome AS nome_desenvolvedora "
+                    + "FROM jogo JOIN desenvolvedora ON jogo.id_desenvolvedora = desenvolvedora.pk_dev";
             ResultSet rs = stmt.executeQuery(sql); // Select
             
             int n_reg = 0;
             while (rs.next()){
                jogo game = new jogo();
-               game.setPkjogo(Integer.parseInt( rs.getString("pk_jogo")));
+               game.setPkjogo(Integer.parseInt(rs.getString("pk_jogo")));
                game.setNome_jogo(rs.getString("nome"));
                game.setDescricao(rs.getString("descricao") );
-               game.setDt_lancamento(rs.getDate("lancamento"));
+               game.setDt_lancamento(rs.getDate("data_lancamento"));
                game.setGenero(rs.getString("genero"));
-               game.setId_desenvolvedora(Integer.parseInt(rs.getString("id_desenvolvedora")));
+               game.setNome_desenvolvedora(rs.getString("nome_desenvolvedora"));
                lista.add(game);
                n_reg++;
             }
@@ -84,9 +85,10 @@ public class jogo_dao {
             conexao = conectadb.conectar(); //Abre a conexão
             Statement stmt = conexao.createStatement(); //Cria uma instrução
             //String sql = "SELECT * FROM cliente WHERE pk_id = 7";
-            String sql = "SELECT * FROM jogo WHERE pk_jogo = " + p_jogo.getPkjogo();
-            ResultSet rs = stmt.executeQuery(sql); // Select
+            String sql = "SELECT jogo.pk_jogo, jogo.nome, jogo.descricao, jogo.data_lancamento, jogo.genero, desenvolvedora.nome AS nome_desenvolvedora FROM jogo JOIN desenvolvedora ON jogo.id_desenvolvedora = desenvolvedora.pk_dev;";
             
+            ResultSet rs = stmt.executeQuery(sql); // Select
+
             int n_reg = 0;
             while (rs.next()){
                p_jogo.setPkjogo( Integer.parseInt( rs.getString("codigo") ));
@@ -94,7 +96,7 @@ public class jogo_dao {
                p_jogo.setDescricao(rs.getString("descricao") );
                p_jogo.setDt_lancamento( rs.getDate("lancamento"));
                p_jogo.setGenero(rs.getString("genero"));
-               p_jogo.setId_desenvolvedora(Integer.parseInt(rs.getString("id_desenvolvedora")));
+               p_jogo.setNome_desenvolvedora(rs.getString("nome_desenvolvedora"));
                n_reg++;
             }
                 

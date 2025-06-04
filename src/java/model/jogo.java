@@ -15,6 +15,7 @@ public class jogo {
     private Date dt_lancamento;
     private String genero;
     private int id_desenvolvedora;
+    private String nome_desenvolvedora;
     
     
     
@@ -52,7 +53,9 @@ public class jogo {
     public int getId_desenvolvedora() {
     return id_desenvolvedora;
 }
-
+    public String getNome_desenvolvedora() {
+    return nome_desenvolvedora;
+}
     public void setPkjogo(int pkjogo) {
         this.pkjogo = pkjogo;
     }
@@ -75,6 +78,9 @@ public class jogo {
     
     public void setId_desenvolvedora(int id_desenvolvedora) {
     this.id_desenvolvedora = id_desenvolvedora;
+}
+    public void setNome_desenvolvedora(String nome_desenvolvedora) {
+    this.nome_desenvolvedora = nome_desenvolvedora;
 }
 
 }
