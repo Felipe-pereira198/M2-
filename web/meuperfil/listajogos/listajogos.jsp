@@ -2,7 +2,7 @@
 <%@page import="java.util.List"%>
 <%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-
+<%@page import="model.desenvolvedora"%>
 <%@page import="dao.jogo_dao"%>
 <%@page import="model.jogo"%>
 <%@page import="java.util.Date"%>
@@ -83,24 +83,25 @@
         <table class="table table-striped table-hover table-bordered">
             <thead class="table-dark">
                 <tr>
+                    <th>Codigo</th>
                     <th>Nome do Jogo</th>
                     <th>Descrição</th>
                     <th>Data de Lançamento</th>
                     <th>Gênero</th>
                     <th>Desenvolvedora</th>
-                    <th>Ações</th>
-                </tr><%
-        if (lista != null) {
-            for (jogo j : lista) {
-    %>
+                    <th>ações</th>
+                </tr> <%    
+            for (int i=0; i<=lista.size()-1; i++ ){                
+        %>
             </thead>
             <tbody>
                 <tr>
-                    <td><%= j.getNome_jogo()%></td>
-                    <td> <%=j.getDescricao()%></td>
-                    <td><%=j.getGenero()%></td>
-                    <td><%=j.getDt_lancamento()%></td>
-                    <td><%=j.getId_desenvolvedora()%></td>
+                    <td><%=(i+1)%></td>
+                    <td><%= lista.get(i).getNome_jogo()%></td>
+                    <td> <%=lista.get(i).getDescricao()%></td>
+                    <td><%=lista.get(i).getGenero()%></td>
+                    <td><%=new SimpleDateFormat("dd/MM/yyyy").format(lista.get(i).getDt_lancamento())%></td>
+                    <td><%=lista.get(i).getNome_desenvolvedora()%></td>
                     <td>
                         <div class="btn-group">
                             <button class="btn btn-edit">Editar</button>
@@ -108,6 +109,9 @@
                         </div>
                     </td>
                 </tr>
+                <%        
+            }
+        %>
                 <!-- Adicione mais jogos aqui -->
             </tbody>
         </table>
